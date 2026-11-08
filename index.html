@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>福柯 · 全景敞视 — 3D 文献站 v3</title>
+<title>福柯 · 全景敞视 — 3D 文献站 v3.2</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Ccircle cx='24' cy='24' r='19' stroke='%238b95a3' stroke-width='2' stroke-dasharray='103 17' stroke-linecap='round' transform='rotate(-58 24 24)'/%3E%3Cpath d='M11 26.5c4-5.6 8.6-8.4 13-8.4s9 2.8 13 8.4c-4 5.6-8.6 8.4-13 8.4s-9-2.8-13-8.4z' stroke='%238b95a3' stroke-width='1.5'/%3E%3Ccircle cx='24' cy='26.5' r='3.2' fill='%23e05545'/%3E%3C/svg%3E">
 <style>
   /* ===== 铸铁全景（与华夏边缘站同骨法、反差配色）=====
      华夏边缘：星空+青铜残弧（礼器·温润·边缘不闭合）
@@ -307,7 +308,7 @@ loop();
   <span class="gaze">塔内此刻是否有人——<b>无法确知</b></span>
 </div>
 <div class="credit">
-  3D 文献站 v3 · 形制考据：边沁 1791 图纸（Myles Zhang / UCL 复原）<br>
+  3D 文献站 v3.2 · 形制考据：边沁 1791 图纸（Myles Zhang / UCL 复原）<br>
   引文逐字核对自上列译本 · 眼徽自绘
 </div>
 
@@ -362,7 +363,7 @@ const prison = new THREE.Group(); scene.add(prison);
   m.rotation.x = -Math.PI/2; m.position.y = y; prison.add(m);
 });
 
-/* ---- 径向隔墙 ×24（通高）+ 自发光棱线（被视锥点名时变红） ---- */
+/* ---- 径向隔墙 ×24（通高）+ 自发光棱线（钢灰基调，被凝视掠过时无变化——不可确知） ---- */
 const wallGeo  = new THREE.BoxGeometry(R-CELL+.2, H_TOTAL+.12, .07);
 const wallEdge = new THREE.EdgesGeometry(wallGeo);
 const bayLines = [];
@@ -596,7 +597,7 @@ addEventListener('resize', ()=>{
   renderer.setSize(innerWidth,innerHeight);
 });
 
-/* 主循环：懒散环绕 + 视锥扫描 + 眼搏动（reduce-motion 全停） */
+/* 主循环：懒散环绕 + 塔灯随机明暗（凝视不可确知）+ 按需渲染（RM/暂停跳绘） */
 let t=0, flick=0, dirty=true;
 function tickStep(){
   const dt = 1/60;
