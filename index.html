@@ -3,7 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>福柯 · 全景敞视 — 3D 文献站 v3.4</title>
+<title>福柯 · 全景敞视 — 3D 文献站 v3.5</title>
+<meta name="description" content="以边沁全景敞视监狱为核心意象的福柯主题 3D 文献站：环形监舍与中心瞭望塔的简化示意，配合逐字核对中译本的引文、成书前史时间线与书单。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tanyaqiongcode.github.io/foucault-3d/">
+<meta property="og:title" content="福柯 · 全景敞视 — 3D 文献站">
+<meta property="og:description" content="以边沁全景敞视监狱为核心意象的福柯主题 3D 文献站：简化示意模型、逐字核对的中译本引文、成书前史与书单。">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Ccircle cx='24' cy='24' r='19' stroke='%238b95a3' stroke-width='2' stroke-dasharray='103 17' stroke-linecap='round' transform='rotate(-58 24 24)'/%3E%3Cpath d='M11 26.5c4-5.6 8.6-8.4 13-8.4s9 2.8 13 8.4c-4 5.6-8.6 8.4-13 8.4s-9-2.8-13-8.4z' stroke='%238b95a3' stroke-width='1.5'/%3E%3Ccircle cx='24' cy='26.5' r='3.2' fill='%23e05545'/%3E%3C/svg%3E">
 <style>
   /* ===== 铸铁全景（与华夏边缘站同骨法、反差配色）=====
@@ -15,8 +22,6 @@
     --line:rgba(139,149,163,.22); --glass:rgba(14,16,20,.78); --glass2:rgba(8,10,13,.6);
     --fserif:"ZhPunct","Times New Roman","Songti SC","STSong","Noto Serif SC","SimSun",serif;
   }
-loop();
-/* RM/隐藏页：rAF 可能被冻结，低频兜底驱动（渲染仍按需跳过，不费电） */
   @font-face{font-family:"ZhPunct";src:local("Songti SC"),local("STSong"),local("Noto Serif SC"),local("SimSun");
     unicode-range:U+2018-201D,U+2026,U+00B7,U+3001,U+3002,U+FF0C,U+FF1A,U+FF1B,U+FF1F,U+FF01,U+FF08,U+FF09,U+2014,U+300A,U+300B;}
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -186,7 +191,7 @@ loop();
     <h1>全景敞视</h1>
     <div class="en">PANOPTICON · SURVEILLER ET PUNIR, 1975</div>
     <div class="quote">「在环形边缘，人彻底被观看，但不能观看；<br>在中心瞭望塔，人能观看一切，但不会被观看到。」<br><b>—— 《规训与惩罚》第三部第三章（刘北成、杨远婴 译）</b></div>
-    <div class="hint">拖 拽 旋 转 · CTRL+滚 轮 缩 放 · 滚 动 阅 读</div>
+    <div class="hint">拖 拽 旋 转 · 空 白 处 CTRL+滚 轮 缩 放 · 滚 动 阅 读</div>
   </section>
 
   <!-- Ⅱ · 监狱之城 -->
@@ -315,7 +320,7 @@ loop();
   </section>
 
   <!-- Ⅵ · 成书前史 -->
-  <section class="sec" id="sec7" data-cam="pre">
+  <section class="sec" id="sec6" data-cam="pre">
     <div class="reveal">
       <div class="num">Ⅵ · 成书前史</div>
       <h2>从监狱运动<em>到一本书</em></h2>
@@ -347,7 +352,7 @@ loop();
   </section>
 
   <!-- Ⅶ · 边缘之外 -->
-  <section class="sec endS" id="sec6" data-cam="end">
+  <section class="sec endS" id="sec7" data-cam="end">
     <div class="reveal">
       <div class="num">Ⅶ · 边缘之外</div>
       <div class="quote">「有一些书如此地具体，全是真实的布满尘土的档案，但是，从这些垂死的档案的字里行间，一种充满激情的思想腾空而起。」<br><b>—— 汪民安《福柯读本》编者前言</b></div>
@@ -361,14 +366,14 @@ loop();
   <span class="gaze">塔内此刻是否有人——<b>无法确知</b></span>
 </div>
 <div class="credit">
-  3D 文献站 v3.4 · 形制考据：边沁 1791 图纸（Myles Zhang / UCL 复原）<br>
+  3D 文献站 v3.5 · 形制考据：边沁 1791 图纸（Myles Zhang / UCL 复原）<br>
   引文逐字核对自上列译本 · 眼徽自绘
 </div>
 
 <script src="three.min.js"></script>
 <script>window.__errs=[];window.addEventListener("error",function(e){window.__errs.push(String(e.message)+" @"+e.lineno);});</script>
 <script>
-/* ================= 福柯3D主题站 v3.4 · 文献融入版 =================
+/* ================= 福柯3D主题站 v3.5 · 文献融入版 =================
    核心意象：全景敞视监狱（Panopticon）
    形制：环形监舍×2层（24榀径向隔墙+朝塔铁栅）+ 中央圆厅塔楼（纯黑）
         + 塔顶百叶帘 + 百叶之上一点警戒红"凝视之眼"
@@ -406,7 +411,7 @@ const MAT = {
   red  : new THREE.MeshBasicMaterial({color:0xe05545}),
 };
 const lineSteelBase = {color:0x8b95a3, transparent:true, opacity:.5};
-const lineAlert = new THREE.LineBasicMaterial({color:0xe05545, transparent:true, opacity:.95});
+const lineSteel = new THREE.LineBasicMaterial(lineSteelBase);   /* v3.5 24 条隔墙棱线共用一份材质 */
 
 const prison = new THREE.Group(); scene.add(prison);
 
@@ -419,16 +424,15 @@ const prison = new THREE.Group(); scene.add(prison);
 /* ---- 径向隔墙 ×24（通高）+ 自发光棱线（钢灰基调，被凝视掠过时无变化——不可确知） ---- */
 const wallGeo  = new THREE.BoxGeometry(R-CELL+.2, H_TOTAL+.12, .07);
 const wallEdge = new THREE.EdgesGeometry(wallGeo);
-const bayLines = [];
 for(let i=0;i<N;i++){
   const th = i/N*Math.PI*2, rr = (CELL-.05+R+.1)/2;
   const w = new THREE.Mesh(wallGeo, MAT.iron);
   w.position.set(rr*Math.cos(th), H_TOTAL/2, rr*Math.sin(th));
   w.rotation.y = -th;
   prison.add(w);
-  const ln = new THREE.LineSegments(wallEdge, new THREE.LineBasicMaterial(lineSteelBase));
+  const ln = new THREE.LineSegments(wallEdge, lineSteel);
   ln.position.copy(w.position); ln.rotation.copy(w.rotation);
-  prison.add(ln); bayLines.push(ln);
+  prison.add(ln);
 }
 
 /* ---- 外壳筒壁（半透明）+ 竖棱线框 ---- */
@@ -454,6 +458,7 @@ const bars = new THREE.InstancedMesh(barGeo, MAT.bar, N*6);
     dummy.position.set(CELL*Math.cos(th), H_TOTAL/2, CELL*Math.sin(th));
     dummy.updateMatrix(); bars.setMatrixAt(bi++, dummy.matrix);
   } }
+bars.frustumCulled = false;   /* v3.5 包围球只算单根几何，近景可能误剔除 */
 prison.add(bars);
 
 /* ---- 中央塔楼：黑核（"塔内不可见"）+ 灯笼环 + 百叶帘×3 ---- */
@@ -527,6 +532,7 @@ const target = new THREE.Vector3(0,1.6,0);
 let yaw=.72, pitch=.40, dist=20;
 let yawT=yaw, pitchT=pitch, distT=dist;
 let dragging=false, lastX=0, lastY=0, yawVel=0, paused=false;
+let dirty=true, targetYT=1.6;   /* v3.5 按需渲染标记提前声明；注视高度平滑目标 */
 const DENS={lo:.4,mid:.75,full:1}; let density='mid';
 function applyDensity(){
   const f = DENS[density];
@@ -545,6 +551,7 @@ function applyQuality(k){ quality=(k==='auto')?autoQuality():k;
   applyDensity();
   document.querySelectorAll('#segQ span').forEach(x=>{ const on=x.dataset.v===k;
     x.classList.toggle('on',on); x.setAttribute('aria-pressed', String(on)); });
+  dirty = true;
   try{ localStorage.setItem('fqQuality', k); }catch(e){} }
 try{ applyQuality(localStorage.getItem('fqQuality')||'auto'); }catch(e){ applyQuality('auto'); }
 /* v3 渐进入场：three 运行起来即撤下提示条（armed 保证只放一次） */
@@ -575,8 +582,10 @@ const CAM = {
 };
 function applyCam(key){
   const p = CAM[key]; if(!p) return;
-  pitchT = p.pitch; distT = p.dist; target.y = p.ty;
-  if(p.yaw !== undefined) yawT = p.yaw;
+  pitchT = p.pitch; distT = p.dist; targetYT = p.ty;
+  /* v3.5 最短弧：闲置环绕会累积整圈，换节时只转最近的那段角度 */
+  if(p.yaw !== undefined){ const TAU=Math.PI*2, d=p.yaw-yaw; yawT = yaw + (d - TAU*Math.round(d/TAU)); yawVel = 0; }
+  dirty = true;
   document.querySelectorAll('#segView span').forEach(x=>{
     const on = x.dataset.v===key;
     x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on));
@@ -620,8 +629,10 @@ document.addEventListener('pointermove', e=>{
 });
 document.addEventListener('pointerup', ()=> dragging=false);
 document.addEventListener('pointercancel', ()=> dragging=false);
-canvas.addEventListener('wheel', e=>{
+/* v3.5 Ctrl/⌘+滚轮：只在 3D 空白处缩放；正文上方保留浏览器自带的网页缩放 */
+document.addEventListener('wheel', e=>{
   if(!(e.ctrlKey||e.metaKey)) return;   /* 普通滚轮留给页面滚动 */
+  if(e.target.closest && e.target.closest(DRAG_SKIP)) return;
   e.preventDefault();
   distT = Math.min(30, Math.max(5, distT*(1+e.deltaY*.001)));
 },{passive:false});
@@ -641,6 +652,7 @@ function togglePause(){
   b.classList.toggle('on',paused);
   b.childNodes[0].textContent = paused?'继续':'暂停';
   b.setAttribute('aria-pressed', String(paused));
+  dirty = true;
 }
 document.getElementById('btnPause').addEventListener('click', togglePause);
 document.querySelectorAll('#segQ span').forEach(s=>s.addEventListener('click', ()=>applyQuality(s.dataset.v)));
@@ -649,10 +661,11 @@ document.querySelectorAll('#segQ span').forEach(s=>s.addEventListener('click', (
 addEventListener('resize', ()=>{
   camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
   renderer.setSize(innerWidth,innerHeight);
+  dirty = true;   /* v3.5 setSize 会清空画布，暂停/减动效下也要补绘一帧 */
 });
 
 /* 主循环：懒散环绕 + 塔灯随机明暗（凝视不可确知）+ 按需渲染（RM/暂停跳绘） */
-let t=0, flick=0, dirty=true;
+let t=0, flick=0;
 function tickStep(){
   const dt = 1/60;
   if(!dragging){
@@ -662,6 +675,7 @@ function tickStep(){
   yaw   += (yawT-yaw)*.08;
   pitch += (pitchT-pitch)*.08;
   dist  += (distT-dist)*.08;
+  target.y += (targetYT-target.y)*.08;   /* v3.5 注视高度平滑过渡 */
   camUpdate();
 
   if(!paused && !RM){
@@ -677,7 +691,7 @@ function tickStep(){
   }
   bronzeArcs.rotation.z += (paused||RM)?0:.0006;
   /* v3.2 按需渲染：暂停/减动效时场景无变化则跳过绘制 */
-  const moving = dragging || Math.abs(yawT-yaw)>1e-4 || Math.abs(pitchT-pitch)>1e-4 || Math.abs(distT-dist)>1e-3 || Math.abs(yawVel)>1e-4;
+  const moving = dragging || Math.abs(yawT-yaw)>1e-4 || Math.abs(pitchT-pitch)>1e-4 || Math.abs(distT-dist)>1e-3 || Math.abs(targetYT-target.y)>1e-3 || Math.abs(yawVel)>1e-4;
   if((paused||RM) && !moving && !dirty) return;
   renderer.render(scene,camera);
   dirty = false;
@@ -685,7 +699,6 @@ function tickStep(){
 }
 function loop(){ requestAnimationFrame(loop); tickStep(); }
 loop();
-/* RM/隐藏页：rAF 可能被冻结，低频兜底驱动（渲染仍按需跳过） */
 </script>
 </body>
 </html>
