@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>福柯 · 全景敞视 — 3D 文献站 v3.3</title>
+<title>福柯 · 全景敞视 — 3D 文献站 v3.4</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Ccircle cx='24' cy='24' r='19' stroke='%238b95a3' stroke-width='2' stroke-dasharray='103 17' stroke-linecap='round' transform='rotate(-58 24 24)'/%3E%3Cpath d='M11 26.5c4-5.6 8.6-8.4 13-8.4s9 2.8 13 8.4c-4 5.6-8.6 8.4-13 8.4s-9-2.8-13-8.4z' stroke='%238b95a3' stroke-width='1.5'/%3E%3Ccircle cx='24' cy='26.5' r='3.2' fill='%23e05545'/%3E%3C/svg%3E">
 <style>
   /* ===== 铸铁全景（与华夏边缘站同骨法、反差配色）=====
@@ -76,7 +76,7 @@ loop();
   .shelfhead{margin-top:46px;font-size:13px;letter-spacing:.3em;color:var(--dim);text-align:center}
   .shelf{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:22px auto 8px;max-width:900px}
   .spineWrap{display:flex;flex-direction:column;align-items:center;gap:9px}
-  .spine{position:relative;writing-mode:vertical-rl;letter-spacing:.18em;font-size:14.5px;padding:20px 13px;min-height:170px;
+  .spine{position:relative;writing-mode:vertical-rl;white-space:nowrap;letter-spacing:.18em;font-size:14.5px;padding:20px 13px;min-height:170px;
     border:1px solid var(--line);border-radius:6px 6px 3px 3px;color:var(--ink);
     background:linear-gradient(180deg,rgba(57,64,74,.4),rgba(20,23,28,.7));
     box-shadow:inset 2px 0 0 rgba(139,149,163,.18),inset -2px 0 0 rgba(0,0,0,.35);transition:.3s}
@@ -88,6 +88,19 @@ loop();
   .spine.h{writing-mode:horizontal-tb;min-height:0;padding:14px;letter-spacing:.06em;font-size:12px}
   .shelfnote{text-align:center;color:var(--dim);font-size:11px;letter-spacing:.12em;margin-top:6px}
 
+  /* v3.4 成书前史时间线 */
+  .tlwrap{max-width:760px;margin:44px auto 0;border:1px solid var(--line);border-radius:14px;padding:30px 34px 6px;
+    background:linear-gradient(160deg,var(--glass),var(--glass2));backdrop-filter:blur(8px)}
+  .tl{list-style:none;margin:0;border-left:1px solid var(--line);padding-left:0}
+  .tl li{position:relative;padding:0 0 26px 30px}
+  .tl li::before{content:"";position:absolute;left:-5px;top:9px;width:9px;height:9px;border-radius:50%;
+    background:var(--bg);border:1px solid var(--steel)}
+  .tl li.key::before{background:var(--alert);border-color:var(--alert-hi);box-shadow:0 0 14px rgba(193,39,45,.5)}
+  .tl .yr{font-family:"Times New Roman",serif;font-size:20px;color:var(--warm);letter-spacing:.06em}
+  .tl .yr small{font-size:12px;color:var(--dim);margin-left:8px;letter-spacing:.1em}
+  .tl p{margin-top:6px;font-size:14px;line-height:2;color:var(--ink);opacity:.86}
+  .tl .src{margin-top:4px;font-size:11px;color:var(--dim);letter-spacing:.08em;line-height:1.8}
+  .tl .src b{color:var(--steel);font-weight:600}
   .reveal{opacity:0;transform:translateY(26px);transition:all 1s cubic-bezier(.16,1,.3,1)}
   .reveal.on{opacity:1;transform:none}
   .endS{min-height:72vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
@@ -119,7 +132,7 @@ loop();
     pointer-events:auto;text-shadow:0 2px 14px rgba(0,0,0,.8)}
   .credit a{color:var(--steel);text-decoration:none;border-bottom:1px solid var(--line)}
   .credit a:hover{color:var(--warm)}
-  @media(max-width:700px){.credit{display:none}.cmdbar{max-width:calc(100vw - 44px)}.cmdbar .pill{padding:7px 12px}.qlabel{display:none}.seg span{padding:3px 7px}.sec{padding:90px 22px}.statusbar{display:none}.grain{display:none}.pill.hideM{display:none}}
+  @media(max-width:700px){.tlwrap{padding:22px 18px 2px}.tl li{padding-left:22px}.credit{display:none}.cmdbar{max-width:calc(100vw - 44px)}.cmdbar .pill{padding:7px 12px}.qlabel{display:none}.seg span{padding:3px 7px}.sec{padding:90px 22px}.statusbar{display:none}.grain{display:none}.pill.hideM{display:none}}
   /* v3 无障碍：跳到正文 */
   .skip{position:fixed;top:-52px;left:14px;z-index:99;padding:9px 18px;border-radius:99px;font-size:12px;letter-spacing:.14em;
     color:#0b0c0e;background:var(--steel);text-decoration:none;transition:top .25s}
@@ -266,7 +279,7 @@ loop();
       <div class="shelf">
         <div class="spineWrap"><div class="spine star">规训与惩罚</div><span class="who">刘北成 杨远婴 译</span></div>
         <div class="spineWrap"><div class="spine star">疯癫与文明</div><span class="who">刘北成 杨远婴 译</span></div>
-        <div class="spineWrap"><div class="spine star">知识考古学</div><span class="who">谢强 马月 译 · 另有董树宝译</span></div>
+        <div class="spineWrap"><div class="spine star">知识考古学</div><span class="who">谢强 马月 译</span></div>
         <div class="spineWrap"><div class="spine star">词与物</div><span class="who">莫伟民 译</span></div>
         <div class="spineWrap"><div class="spine star">性经验史</div><span class="who">佘碧平 译</span></div>
       </div>
@@ -278,6 +291,13 @@ loop();
         <div class="spineWrap"><div class="spine">临床医学的诞生</div><span class="who">刘北成 译</span></div>
         <div class="spineWrap"><div class="spine">权力的眼睛</div><span class="who">严锋 译 · 访谈录</span></div>
       </div>
+      <div class="shelfhead">成 书 现 场</div>
+      <div class="shelf">
+        <div class="spineWrap"><div class="spine">刑事理论与刑事制度</div><span class="who">陈雪杰 译 · 1971—72</span></div>
+        <div class="spineWrap"><div class="spine">惩罚的社会</div><span class="who">陈雪杰 译 · 1972—73</span></div>
+        <div class="spineWrap"><div class="spine">我，里维耶</div><span class="who">福柯 编 · 1835 卷宗</span></div>
+        <div class="spineWrap"><div class="spine">不正常的人</div><span class="who">钱翰 译 · 1974—75</span></div>
+      </div>
       <div class="shelfhead">工 具 与 传 记</div>
       <div class="shelf">
         <div class="spineWrap"><div class="spine">牛津通识·福柯</div><span class="who">古廷 著 · 王育平 译</span></div>
@@ -287,16 +307,49 @@ loop();
         <div class="spineWrap"><div class="spine">福柯读本</div><span class="who">汪民安 编</span></div>
         <div class="spineWrap"><div class="spine">福柯集</div><span class="who">杜小真 编选 · 远东1998</span></div>
         <div class="spineWrap"><div class="spine">福柯思想肖像</div><span class="who">刘北成</span></div>
+        <div class="spineWrap"><div class="spine">福柯的生死爱欲</div><span class="who">米勒 著 · 高毅 译</span></div>
         <div class="spineWrap"><div class="spine h">A Critical Reader</div><span class="who">ed. David C. Hoy</span></div>
       </div>
-      <p class="shelfnote">全部为本地实有文献 · 扫描版（词与物／考古学／访谈录等）暂无文字层，引文未取自其书<br>系列深度导读陆续接入 · 现有 <a href="https://tanyaqiongcode.github.io/huaxia-frontiers-3d/" style="color:var(--steel);text-decoration:none;border-bottom:1px solid var(--line)">《华夏边缘》深度导读 ↗</a></p>
+      <p class="shelfnote">全部为本地实有文献 · 扫描版（词与物／考古学／访谈录等）暂无文字层，引文未取自其书<br>异译可对读：《规训与惩罚》另有王紹中台译本《監視與懲罰》；《知识考古学》另有董树宝译本<br>系列深度导读陆续接入 · 现有 <a href="https://tanyaqiongcode.github.io/huaxia-frontiers-3d/" style="color:var(--steel);text-decoration:none;border-bottom:1px solid var(--line)">《华夏边缘》深度导读 ↗</a></p>
     </div>
   </section>
 
-  <!-- Ⅵ · 边缘之外 -->
+  <!-- Ⅵ · 成书前史 -->
+  <section class="sec" id="sec7" data-cam="pre">
+    <div class="reveal">
+      <div class="num">Ⅵ · 成书前史</div>
+      <h2>从监狱运动<em>到一本书</em></h2>
+      <p class="lead">《规训与惩罚》不是书斋里的比喻。动笔之前，福柯先介入了真实的监狱问题，又用两年的课程和一份十九世纪的卷宗，为这本书打底。</p>
+      <div class="tlwrap"><ol class="tl">
+        <li><div class="yr">1971<small>2 月 8 日</small></div>
+          <p>福柯在巴黎蒙帕纳斯车站旁的圣贝尔纳小教堂，宣布成立“监狱信息小组”（GIP），收集和公开狱中的真实状况。</p>
+          <div class="src">——米勒《福柯的生死爱欲》（高毅 译）</div></li>
+        <li><div class="yr">1971—1972<small>法兰西学院课程</small></div>
+          <p>《刑事理论与刑事制度》，首讲于 1971 年 11 月 24 日。同一时期，福柯在每周一的研讨班上带学生研读 1835 年皮埃尔·里维耶弑亲案的全部卷宗。</p>
+          <div class="src">——《刑事理论与刑事制度》中译本 · 《我，里维耶》中译本<b>译者前言</b></div></li>
+        <li><div class="yr">1972—1973<small>法兰西学院课程</small></div>
+          <p>《惩罚的社会》：追问十九世纪为什么把监禁变成了惩罚的通用形式。</p>
+          <div class="src">——《惩罚的社会》中译本</div></li>
+        <li><div class="yr">1973<small>5 月 · 里约热内卢</small></div>
+          <p>在里约热内卢天主教大学讲《真理与司法形式》五讲，讲稿中已经援引边沁的《全景敞视》。</p>
+          <div class="src">——<i>Essential Works of Foucault</i>, Vol. 3: <i>Power</i>（Faubion 编）<b>编者注</b></div></li>
+        <li><div class="yr">1973<small>9 月</small></div>
+          <p>研讨班成果结集出版，中译本题为《我，里维耶，杀害了我的母亲、妹妹和弟弟》。一个普通农民被医生、法官和报纸层层书写，成为一份“个案”。</p>
+          <div class="src">——《我，里维耶》中译本<b>译者前言</b></div></li>
+        <li class="key"><div class="yr">1975<small>出版</small></div>
+          <p>《规训与惩罚：监狱的诞生》（<i>Surveiller et punir</i>）由伽利玛出版社出版。</p>
+          <div class="src">——刘北成、杨远婴 译本</div></li>
+        <li><div class="yr">1977<small>回到边沁</small></div>
+          <p>边沁《全景敞视》法文本重新出版，卷首就是福柯与让-皮埃尔·巴鲁、米歇尔·佩罗的对谈《权力的眼睛》。福柯在对谈里回忆：研究刑罚体系时发现，几乎每一份监狱改革方案都要提到边沁的这个“装置”。</p>
+          <div class="src">——Gordon 编 <i>Power/Knowledge</i> 出处说明 · 中译见严锋译《权力的眼睛》</div></li>
+      </ol></div>
+    </div>
+  </section>
+
+  <!-- Ⅶ · 边缘之外 -->
   <section class="sec endS" id="sec6" data-cam="end">
     <div class="reveal">
-      <div class="num">Ⅵ · 边缘之外</div>
+      <div class="num">Ⅶ · 边缘之外</div>
       <div class="quote">「有一些书如此地具体，全是真实的布满尘土的档案，但是，从这些垂死的档案的字里行间，一种充满激情的思想腾空而起。」<br><b>—— 汪民安《福柯读本》编者前言</b></div>
       <p class="srcline">姊妹站 <a href="https://tanyaqiongcode.github.io/huaxia-frontiers-3d/" style="color:var(--steel);text-decoration:none;border-bottom:1px solid var(--line)">华夏边缘 3D</a> · 远端青铜残弧为谱系呼应</p>
     </div>
@@ -308,14 +361,14 @@ loop();
   <span class="gaze">塔内此刻是否有人——<b>无法确知</b></span>
 </div>
 <div class="credit">
-  3D 文献站 v3.3 · 形制考据：边沁 1791 图纸（Myles Zhang / UCL 复原）<br>
+  3D 文献站 v3.4 · 形制考据：边沁 1791 图纸（Myles Zhang / UCL 复原）<br>
   引文逐字核对自上列译本 · 眼徽自绘
 </div>
 
 <script src="three.min.js"></script>
 <script>window.__errs=[];window.addEventListener("error",function(e){window.__errs.push(String(e.message)+" @"+e.lineno);});</script>
 <script>
-/* ================= 福柯3D主题站 v3.3 · 文献融入版 =================
+/* ================= 福柯3D主题站 v3.4 · 文献融入版 =================
    核心意象：全景敞视监狱（Panopticon）
    形制：环形监舍×2层（24榀径向隔墙+朝塔铁栅）+ 中央圆厅塔楼（纯黑）
         + 塔顶百叶帘 + 百叶之上一点警戒红"凝视之眼"
@@ -515,6 +568,7 @@ const CAM = {
   disc    : {pitch:.30, dist:13,  ty:2.2, yaw:2.52},
   concepts: {pitch:.45, dist:16,  ty:1.8, yaw:3.62},
   books   : {pitch:.62, dist:22,  ty:2.0, yaw:4.62},
+  pre     : {pitch:.75, dist:18,  ty:2.2, yaw:5.07},
   end     : {pitch:1.00, dist:26, ty:3.0, yaw:5.52},
   top     : {pitch:1.15, dist:8.5, ty:3.2},
   cell    : {pitch:.12, dist:5.2, ty:.9, yaw:(8.5/N)*Math.PI*2}
@@ -549,7 +603,7 @@ document.getElementById('segView').addEventListener('click', e=>{
 
 /* ---- 拖拽旋转（惯性，钳制防甩飞）+ Ctrl/⌘+滚轮缩放 + 键盘微调 ---- */
 /* v3.2 拖拽：鼠标在页面任意非交互处可旋转；触屏仍限于画布空隙 */
-const DRAG_SKIP='a,button,input,select,textarea,.pill,.seg,table,.mapwrap,.card,.bigquote,video,img,p,h1,h2,h3,.lead,.quote,.modelnote,.shelfnote,.srcline';
+const DRAG_SKIP='a,button,input,select,textarea,.pill,.seg,table,.mapwrap,.card,.bigquote,video,img,p,h1,h2,h3,.lead,.quote,.modelnote,.shelfnote,.srcline,.tl';
 document.addEventListener('pointerdown', e=>{
   if(e.pointerType==='mouse' && !e.target.closest(DRAG_SKIP)){
     dragging=true; lastX=e.clientX; lastY=e.clientY; yawVel=0;
